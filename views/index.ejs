@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Electric or Not?</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
 	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 </head>
 <body>
-YOOOOOOOOOOOOOOO
+	<header>
+		<nav class="nav navbar-default" role="navigation">
+		    <div class="container-fluid">
+		        <ul class="nav nav-pills nav-justified">
+		            <li>
+		                <a class="active" href="./">
+		                    <span class="glyphicon glyphicon-print"></span>Vote!
+		                </a>
+		            </li>
+		            <li>
+		                <a class="active" href="./standings">
+		                    <span class="glyphicon glyphicon-alt"></span>Standings
+		                </a>
+		            </li>
+		        </ul>
+		    </div>
+		</nav>
+	</header>
+
+	<div class="main-div text-center">
+		<h1> Electric or Not? </h1>
+		<img src="<%= imageToRender %>">
+
+	</div>
+	<div class="voting-buttons text-center">
+            <form class="vote-button" action="./vote/electric/<%= imageID%>" method="post">
+                <input type="hidden" name="elecOrNot" value="14">
+                <input type="submit" class="btn btn-lg btn-success" value="Electric">
+            </form>
+            <form class="vote-button" action="./vote/gas/<%= imageID%>" method="post">
+                <input type="hidden" name="elecOrNot" value="14">
+                <input type="submit" class="btn btn-lg btn-primary" value="Gas">
+            </form>
+    </div>
 </body>
 </html>
