@@ -35,20 +35,25 @@
 		    </div>
 		</nav>
 	</header>
+	<!-- if statement for when picture=undefined -->
 
 	<div class="main-div text-center">
-		<h1> Electric or Not? </h1>
+		<h1><%= title%></h1>
 		<img src="<%= imageToRender %>">
 
 	</div>
 	<div class="voting-buttons text-center">
-            <form class="vote-button" action="./vote/electric/<%= imageID%>" method="post">
+            <form class="vote-button col-xs-4" action="./vote/electric/<%= imageID%>" method="post">
                 <input type="hidden" name="elecOrNot" value="14">
-                <input type="submit" class="btn btn-lg btn-success" value="Electric">
+                <input type="submit" name="vote" class="btn btn-lg btn-success" value="Electric">
             </form>
-            <form class="vote-button" action="./vote/gas/<%= imageID%>" method="post">
+            <form class="vote-button col-xs-4" action="./vote/gas/<%= imageID%>" method="post">
                 <input type="hidden" name="elecOrNot" value="14">
-                <input type="submit" class="btn btn-lg btn-primary" value="Gas">
+                <input type="submit" name="vote" class="btn btn-lg btn-primary" value="Gas">
+            </form>
+            <form class="vote-button col-xs-4" action="./vote/hybrid/<%= imageID%>" method="post">
+                <input type="hidden" name="elecOrNot" value="14">
+                <input type="submit" name="vote" class="btn btn-lg btn-warning" value="Hybrid">
             </form>
     </div>
 </body>
